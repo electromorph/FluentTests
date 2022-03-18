@@ -10,7 +10,12 @@ namespace FluentTests
     {
         public static OrderEngine Customer(this OrderEngine @orderEngine, int customerId)
         {
-
+            orderEngine.Order.CustomerId = customerId;
+            return @orderEngine;
         }
+
+        public static OrderEngine AddLineItem(
+            this OrderEngine @orderEngine, IOrderLineItem orderLineItem
+            )
     }
 }
